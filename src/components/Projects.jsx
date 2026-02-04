@@ -9,7 +9,7 @@ const Projects = () => {
             description: 'Built a responsive e-commerce platform with cart and checkout functionality using React.js. Implemented dynamic routing with React Router and lazy loading, reducing load times by 20%.',
             technologies: ['React.js', 'HTML', 'CSS', 'JavaScript'],
             liveUrl: 'https://lokeshwarp01.github.io/meshop/',
-            githubUrl: 'https://github.com/lokeshwarp01/meshop.git',
+            frontendUrl: 'https://github.com/lokeshwarp01/meshop.git',
             highlights: [
                 'Dynamic routing with React Router',
                 'Lazy loading for 20% faster load times',
