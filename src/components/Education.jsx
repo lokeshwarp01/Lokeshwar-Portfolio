@@ -24,105 +24,84 @@ const Education = () => {
         <Box
             id="education"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: '#000000',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
+                        textAlign: 'left',
+                        mb: 6,
+                        color: '#000',
                     }}
                 >
-                    Education
+                    Education // Learn
                 </Typography>
-
-                <Box
-                    sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
-                        mb: 6,
-                    }}
-                />
 
                 <Box
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
-                        gap: 3,
+                        gap: 4,
                     }}
                 >
                     {education.map((edu, index) => (
                         <Paper
                             key={index}
-                            elevation={0}
+                            className="brutalist-card"
                             sx={{
-                                p: { xs: 2.5, sm: 3, md: 4 },
-                                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                                border: '1px solid #333333',
+                                p: { xs: 3, sm: 4, md: 5 },
                                 position: 'relative',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    borderColor: '#ffffff',
-                                    boxShadow: '0 12px 40px rgba(255, 255, 255, 0.1)',
-                                },
-                                '&::before': {
-                                    content: '""',
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    bottom: 0,
-                                    width: '4px',
-                                    background: 'linear-gradient(180deg, #ffffff 0%, #808080 100%)',
-                                },
                             }}
                         >
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <School sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
-                                <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, backgroundColor: '#000', color: '#fff', p: 1, border: '2px solid #000' }}>
+                                <School sx={{ mr: 1, fontSize: '2rem' }} />
+                                <Typography variant="h5" sx={{ fontWeight: 900, lineHeight: 1.1 }}>
                                     {edu.degree}
                                 </Typography>
                             </Box>
 
                             <Typography
-                                variant="body1"
+                                variant="h6"
                                 sx={{
-                                    color: '#e0e0e0',
+                                    color: '#000',
                                     mb: 1,
-                                    fontWeight: 500,
+                                    fontWeight: 800,
                                 }}
                             >
                                 {edu.institution}
                             </Typography>
 
                             <Typography
-                                variant="body2"
+                                variant="body1"
                                 sx={{
-                                    color: '#b0b0b0',
+                                    color: '#333',
                                     mb: 2,
                                     fontStyle: 'italic',
+                                    fontWeight: 600
                                 }}
                             >
                                 {edu.university}
                             </Typography>
 
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, color: '#b0b0b0' }}>
-                                <CalendarToday sx={{ fontSize: '1rem', mr: 0.5 }} />
-                                <Typography variant="body2">{edu.period}</Typography>
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, color: '#000', fontWeight: 700 }}>
+                                <CalendarToday sx={{ fontSize: '1.2rem', mr: 1 }} />
+                                <Typography variant="body1">{edu.period}</Typography>
                             </Box>
 
                             <Chip
-                                label={`CGPA: ${edu.cgpa}`}
+                                label={`GPA: ${edu.cgpa}`}
                                 sx={{
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    color: '#ffffff',
-                                    fontWeight: 600,
+                                    backgroundColor: '#000',
+                                    color: '#fff',
+                                    fontWeight: 900,
+                                    borderRadius: 0,
+                                    fontSize: '1rem',
+                                    px: 1
                                 }}
                             />
                         </Paper>

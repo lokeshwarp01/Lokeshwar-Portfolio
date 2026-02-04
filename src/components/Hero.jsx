@@ -18,9 +18,7 @@ const Hero = () => {
                 display: 'flex',
                 alignItems: 'center',
                 position: 'relative',
-                background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)',
-                backgroundSize: '200% 200%',
-                animation: 'gradient 15s ease infinite',
+                background: '#ffffff',
                 overflow: 'hidden',
                 '&::before': {
                     content: '""',
@@ -29,7 +27,9 @@ const Hero = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                    backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
+                    backgroundSize: '30px 30px',
+                    opacity: 0.1,
                     pointerEvents: 'none',
                 },
             }}
@@ -37,18 +37,24 @@ const Hero = () => {
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, px: { xs: 2, sm: 3, md: 4 } }}>
                 <Box
                     sx={{
-                        textAlign: 'center',
-                        animation: 'fadeInUp 1s ease-out',
+                        textAlign: 'left',
                     }}
                 >
                     <Typography
                         variant="h6"
+                        className="crazy-float"
                         sx={{
-                            color: '#b0b0b0',
+                            color: '#000000',
                             mb: 2,
-                            letterSpacing: '0.2em',
+                            fontWeight: 900,
+                            letterSpacing: '0.1em',
                             textTransform: 'uppercase',
-                            fontSize: '0.9rem',
+                            backgroundColor: '#000000',
+                            color: '#ffffff',
+                            display: 'inline-block',
+                            px: 2,
+                            py: 0.5,
+                            border: '3px solid #000000',
                         }}
                     >
                         Hello, I'm
@@ -56,66 +62,72 @@ const Hero = () => {
 
                     <Typography
                         variant="h1"
+                        className="glitch-text"
                         sx={{
-                            fontWeight: 800,
-                            mb: 2,
-                            background: 'linear-gradient(135deg, #ffffff 0%, #808080 100%)',
-                            backgroundClip: 'text',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+                            fontWeight: 900,
+                            mb: 1,
+                            color: '#000000',
+                            fontSize: { xs: '3.5rem', sm: '5rem', md: '7rem' },
+                            lineHeight: 0.9,
+                            cursor: 'default',
                         }}
                     >
-                        Lokeshwar Panuganti
+                        Lokeshwar<br />Panuganti
                     </Typography>
 
                     <Typography
                         variant="h4"
                         sx={{
-                            color: '#e0e0e0',
-                            mb: 3,
-                            fontWeight: 500,
-                            fontSize: { xs: '1.25rem', sm: '1.75rem', md: '2rem' },
+                            color: '#000000',
+                            mb: 4,
+                            fontWeight: 800,
+                            fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' },
+                            textTransform: 'uppercase',
                         }}
                     >
-                        Aspiring Software Engineer
+                        Software Engineer
                     </Typography>
 
-                    <Typography
-                        variant="body1"
+                    <Box
                         sx={{
-                            color: '#b0b0b0',
-                            maxWidth: '700px',
-                            mx: 'auto',
-                            mb: 4,
-                            lineHeight: 1.8,
-                            fontSize: { xs: '1rem', md: '1.1rem' },
+                            borderLeft: '10px solid #000000',
+                            pl: 3,
+                            mb: 6,
+                            maxWidth: '700px'
                         }}
                     >
-                        Skilled in building modern web applications with the MERN stack.
-                        Passionate about creating responsive UIs and writing clean, efficient code.
-                    </Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: '#333333',
+                                fontSize: { xs: '1.1rem', md: '1.3rem' },
+                                fontWeight: 600,
+                                lineHeight: 1.4,
+                            }}
+                        >
+                            I build high-performance web applications using the MERN stack.
+                            Clean code. Bold designs. Relentless execution.
+                        </Typography>
+                    </Box>
 
                     <Stack
                         direction={{ xs: 'column', sm: 'row' }}
-                        spacing={2}
-                        justifyContent="center"
-                        alignItems="center"
-                        sx={{ mb: 4, width: '100%', px: { xs: 2, sm: 0 } }}
+                        spacing={3}
+                        alignItems="flex-start"
+                        sx={{ mb: 6, width: '100%' }}
                     >
                         <Button
                             variant="contained"
                             size="large"
                             onClick={() => scrollToSection('projects')}
                             sx={{
-                                px: 4,
-                                py: 1.5,
-                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                                px: 5,
+                                py: 2,
+                                fontSize: '1.2rem',
                                 width: { xs: '100%', sm: 'auto' },
-                                maxWidth: { xs: '320px', sm: 'none' },
                             }}
                         >
-                            View My Work
+                            Exploration
                         </Button>
                         <Button
                             variant="outlined"
@@ -125,105 +137,70 @@ const Hero = () => {
                             href="/LokeshwarP@16.pdf"
                             download="Lokeshwar_Panuganti.pdf"
                             sx={{
-                                px: 4,
-                                py: 1.5,
-                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                                px: 5,
+                                py: 2,
+                                fontSize: '1.2rem',
                                 width: { xs: '100%', sm: 'auto' },
-                                maxWidth: { xs: '320px', sm: 'none' },
                             }}
                         >
-                            Download Resume
-                        </Button>
-                        <Button
-                            variant="outlined"
-                            size="large"
-                            onClick={() => scrollToSection('contact')}
-                            sx={{
-                                px: 4,
-                                py: 1.5,
-                                fontSize: { xs: '0.9rem', sm: '1rem' },
-                                width: { xs: '100%', sm: 'auto' },
-                                maxWidth: { xs: '320px', sm: 'none' },
-                            }}
-                        >
-                            Contact Me
+                            The Resume
                         </Button>
                     </Stack>
 
                     <Stack
                         direction="row"
-                        spacing={2}
-                        justifyContent="center"
-                        sx={{ mb: 6 }}
+                        spacing={3}
+                        sx={{ mb: 4 }}
                     >
                         <IconButton
                             component="a"
                             href="https://github.com/lokeshwarp01"
                             target="_blank"
                             rel="noopener noreferrer"
-                            sx={{
-                                color: '#ffffff',
-                                border: '2px solid #333333',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    borderColor: '#ffffff',
-                                    transform: 'translateY(-3px)',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                                },
-                            }}
+                            sx={{ color: '#000' }}
                         >
-                            <GitHub />
+                            <GitHub fontSize="large" />
                         </IconButton>
                         <IconButton
                             component="a"
                             href="https://www.linkedin.com/in/lokeshwar-panuganti-13511a249/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            sx={{
-                                color: '#ffffff',
-                                border: '2px solid #333333',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    borderColor: '#ffffff',
-                                    transform: 'translateY(-3px)',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                                },
-                            }}
+                            sx={{ color: '#000' }}
                         >
-                            <LinkedIn />
+                            <LinkedIn fontSize="large" />
                         </IconButton>
                         <IconButton
                             component="a"
                             href="mailto:panugantilokeshwar@gmail.com"
-                            sx={{
-                                color: '#ffffff',
-                                border: '2px solid #333333',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    borderColor: '#ffffff',
-                                    transform: 'translateY(-3px)',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                                },
-                            }}
+                            sx={{ color: '#000' }}
                         >
-                            <Email />
+                            <Email fontSize="large" />
                         </IconButton>
                     </Stack>
-
-                    <IconButton
-                        onClick={() => scrollToSection('about')}
-                        sx={{
-                            color: '#ffffff',
-                            animation: 'float 3s ease-in-out infinite',
-                            '&:hover': {
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                            },
-                        }}
-                    >
-                        <KeyboardArrowDown fontSize="large" />
-                    </IconButton>
                 </Box>
             </Container>
+
+            <Box
+                sx={{
+                    position: 'absolute',
+                    bottom: 40,
+                    right: 40,
+                    display: { xs: 'none', md: 'block' }
+                }}
+            >
+                <IconButton
+                    onClick={() => scrollToSection('about')}
+                    sx={{
+                        color: '#000000',
+                        animation: 'bounce-subtle 2s infinite',
+                        border: '4px solid #000',
+                        boxShadow: '6px 6px 0px #000'
+                    }}
+                >
+                    <KeyboardArrowDown fontSize="large" />
+                </IconButton>
+            </Box>
         </Box>
     );
 };

@@ -7,149 +7,123 @@ const Contact = () => {
         <Box
             id="contact"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 100%)',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
-                    }}
-                >
-                    Get In Touch
-                </Typography>
-
-                <Box
-                    sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
+                        textAlign: 'left',
                         mb: 6,
-                    }}
-                />
-
-                <Typography
-                    variant="body1"
-                    sx={{
-                        textAlign: 'center',
-                        maxWidth: '600px',
-                        mx: 'auto',
-                        mb: 4,
-                        color: '#b0b0b0',
-                        fontSize: '1.1rem',
+                        color: '#000',
                     }}
                 >
-                    I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
-                    Feel free to reach out!
+                    Contact // Talk
                 </Typography>
-
-                <Stack
-                    direction="row"
-                    spacing={{ xs: 1.5, sm: 2 }}
-                    justifyContent="center"
-                    sx={{ mb: 4 }}
-                >
-                    <IconButton
-                        component="a"
-                        href="https://github.com/lokeshwarp01"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                            color: '#ffffff',
-                            border: '2px solid #333333',
-                            width: { xs: 48, sm: 56 },
-                            height: { xs: 48, sm: 56 },
-                            transition: 'all 0.3s ease',
-                            '&:hover': {
-                                borderColor: '#ffffff',
-                                transform: 'translateY(-5px)',
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                            },
-                        }}
-                    >
-                        <GitHub sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
-                    </IconButton>
-                    <IconButton
-                        component="a"
-                        href="https://www.linkedin.com/in/lokeshwar-panuganti-13511a249/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                            color: '#ffffff',
-                            border: '2px solid #333333',
-                            width: { xs: 48, sm: 56 },
-                            height: { xs: 48, sm: 56 },
-                            transition: 'all 0.3s ease',
-                            '&:hover': {
-                                borderColor: '#ffffff',
-                                transform: 'translateY(-5px)',
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                            },
-                        }}
-                    >
-                        <LinkedIn sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
-                    </IconButton>
-                    <IconButton
-                        component="a"
-                        href="mailto:panugantilokeshwar@gmail.com"
-                        sx={{
-                            color: '#ffffff',
-                            border: '2px solid #333333',
-                            width: { xs: 48, sm: 56 },
-                            height: { xs: 48, sm: 56 },
-                            transition: 'all 0.3s ease',
-                            '&:hover': {
-                                borderColor: '#ffffff',
-                                transform: 'translateY(-5px)',
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                            },
-                        }}
-                    >
-                        <Email sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
-                    </IconButton>
-                </Stack>
 
                 <Box
                     sx={{
                         display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: 2,
-                        mb: 6,
+                        flexDirection: { xs: 'column', md: 'row' },
+                        gap: 8,
+                        mb: 10
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <Email sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
-                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' }, wordBreak: 'break-word' }}>panugantilokeshwar@gmail.com</Typography>
+                    <Box sx={{ flex: 1 }}>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                mb: 3,
+                                fontWeight: 900,
+                                textTransform: 'uppercase',
+                                lineHeight: 1.1
+                            }}
+                        >
+                            Let's Build Something <span style={{ backgroundColor: '#000', color: '#fff', padding: '0 8px' }}>Epic</span>
+                        </Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: '#000',
+                                fontSize: '1.2rem',
+                                fontWeight: 500,
+                                mb: 4
+                            }}
+                        >
+                            Open for collaborations, side quests, or just technical banter.
+                            My inbox is always ready for a challenge.
+                        </Typography>
+
+                        <Stack
+                            direction="row"
+                            spacing={3}
+                            sx={{ mb: 4 }}
+                        >
+                            <IconButton
+                                component="a"
+                                href="https://github.com/lokeshwarp01"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={{ color: '#000', border: '4px solid #000', boxShadow: '6px 6px 0px #000', p: 2 }}
+                            >
+                                <GitHub sx={{ fontSize: '2rem' }} />
+                            </IconButton>
+                            <IconButton
+                                component="a"
+                                href="https://www.linkedin.com/in/lokeshwar-panuganti-13511a249/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={{ color: '#000', border: '4px solid #000', boxShadow: '6px 6px 0px #000', p: 2 }}
+                            >
+                                <LinkedIn sx={{ fontSize: '2rem' }} />
+                            </IconButton>
+                            <IconButton
+                                component="a"
+                                href="mailto:panugantilokeshwar@gmail.com"
+                                sx={{ color: '#000', border: '4px solid #000', boxShadow: '6px 6px 0px #000', p: 2 }}
+                            >
+                                <Email sx={{ fontSize: '2rem' }} />
+                            </IconButton>
+                        </Stack>
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <Phone sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
-                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>+91 9177621222</Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <LocationOn sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
-                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>Hyderabad, Telangana, India</Typography>
+
+                    <Box sx={{ flex: 1, border: '4px solid #000', p: 4, backgroundColor: '#000', color: '#fff', boxShadow: '12px 12px 0px #000' }}>
+                        <Box sx={{ mb: 4 }}>
+                            <Typography variant="h6" sx={{ fontWeight: 900, mb: 1, textTransform: 'uppercase', color: '#888' }}>Quick Links</Typography>
+                            <Stack spacing={2}>
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <Email sx={{ mr: 2 }} />
+                                    <Typography variant="body1" sx={{ fontWeight: 700 }}>panugantilokeshwar@gmail.com</Typography>
+                                </Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <Phone sx={{ mr: 2 }} />
+                                    <Typography variant="body1" sx={{ fontWeight: 700 }}>+91 9177621222</Typography>
+                                </Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <LocationOn sx={{ mr: 2 }} />
+                                    <Typography variant="body1" sx={{ fontWeight: 700 }}>Hyderabad, Telangana, India</Typography>
+                                </Box>
+                            </Stack>
+                        </Box>
                     </Box>
                 </Box>
 
                 <Box
                     sx={{
-                        borderTop: '1px solid #333333',
-                        pt: 4,
+                        borderTop: '6px solid #000',
+                        pt: 6,
                         textAlign: 'center',
                     }}
                 >
-                    <Typography variant="body2" sx={{ color: '#808080' }}>
-                        © {new Date().getFullYear()} Lokeshwar Panuganti. All rights reserved.
+                    <Typography variant="h6" sx={{ fontWeight: 900, textTransform: 'uppercase' }}>
+                        © {new Date().getFullYear()} LOKESHWAR PANUGANTI
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#808080', mt: 1 }}>
-                        Built with React & Material-UI
+                    <Typography variant="body2" sx={{ fontWeight: 800, mt: 1, textTransform: 'uppercase' }}>
+                        No fluff. Just Code.
                     </Typography>
                 </Box>
             </Container>

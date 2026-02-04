@@ -38,58 +38,50 @@ const Projects = () => {
         <Box
             id="projects"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
+                        textAlign: 'left',
+                        mb: 6,
+                        color: '#000',
                     }}
                 >
-                    Personal Projects
+                    Projects // Build
                 </Typography>
-
-                <Box
-                    sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
-                        mb: 6,
-                    }}
-                />
 
                 <Box
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
-                        gap: 4,
+                        gap: 6,
                     }}
                 >
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            elevation={0}
+                            className="brutalist-card"
                             sx={{
                                 height: '100%',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                                border: '1px solid #333333',
+                                borderRadius: 0,
                             }}
                         >
-                            <CardContent sx={{ flexGrow: 1, p: { xs: 2.5, sm: 3 } }}>
+                            <CardContent sx={{ flexGrow: 1, p: { xs: 3, sm: 4 } }}>
                                 <Typography
-                                    variant="h5"
+                                    variant="h4"
                                     sx={{
-                                        mb: 2,
-                                        fontWeight: 600,
+                                        mb: 3,
+                                        fontWeight: 900,
+                                        textTransform: 'uppercase',
+                                        lineHeight: 1.1
                                     }}
                                 >
                                     {project.title}
@@ -98,24 +90,26 @@ const Projects = () => {
                                 <Typography
                                     variant="body1"
                                     sx={{
-                                        mb: 3,
-                                        color: '#b0b0b0',
-                                        lineHeight: 1.7,
+                                        mb: 4,
+                                        color: '#000',
+                                        fontWeight: 500,
+                                        lineHeight: 1.4,
                                     }}
                                 >
                                     {project.description}
                                 </Typography>
 
-                                <Box sx={{ mb: 3 }}>
+                                <Box sx={{ mb: 4, p: 2, border: '2px dashed #000' }}>
                                     <Typography
-                                        variant="subtitle2"
+                                        variant="subtitle1"
                                         sx={{
-                                            mb: 1,
-                                            color: '#e0e0e0',
-                                            fontWeight: 600,
+                                            mb: 1.5,
+                                            color: '#000',
+                                            fontWeight: 900,
+                                            textTransform: 'uppercase'
                                         }}
                                     >
-                                        Key Highlights:
+                                        Highlights:
                                     </Typography>
                                     <Box component="ul" sx={{ pl: 2, m: 0 }}>
                                         {project.highlights.map((highlight, idx) => (
@@ -123,12 +117,10 @@ const Projects = () => {
                                                 component="li"
                                                 key={idx}
                                                 sx={{
-                                                    color: '#b0b0b0',
-                                                    mb: 0.5,
-                                                    fontSize: '0.875rem',
-                                                    '&::marker': {
-                                                        color: '#ffffff',
-                                                    },
+                                                    color: '#000',
+                                                    mb: 1,
+                                                    fontWeight: 600,
+                                                    fontSize: '0.95rem',
                                                 }}
                                             >
                                                 {highlight}
@@ -137,16 +129,17 @@ const Projects = () => {
                                     </Box>
                                 </Box>
 
-                                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                                <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap>
                                     {project.technologies.map((tech, techIndex) => (
                                         <Chip
                                             key={techIndex}
                                             label={tech}
                                             size="small"
                                             sx={{
-                                                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                                                color: '#ffffff',
-                                                fontSize: '0.75rem',
+                                                border: '2px solid #000',
+                                                backgroundColor: '#fff',
+                                                fontWeight: 800,
+                                                borderRadius: 0,
                                             }}
                                         />
                                     ))}
@@ -156,10 +149,10 @@ const Projects = () => {
                             <CardActions
                                 disableSpacing
                                 sx={{
-                                    p: { xs: 2.5, sm: 3 },
+                                    p: { xs: 3, sm: 4 },
                                     pt: 0,
                                     flexDirection: { xs: 'column', sm: 'row' },
-                                    gap: 1.5,
+                                    gap: 2,
                                     alignItems: 'stretch',
                                     '& > *': {
                                         margin: '0 !important',
@@ -167,36 +160,33 @@ const Projects = () => {
                                 }}
                             >
                                 <Button
-                                    variant="outlined"
-                                    size="small"
+                                    variant="contained"
+                                    size="large"
                                     startIcon={<Launch />}
                                     href={project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    sx={{ width: { xs: '100%', sm: 'auto' } }}
                                 >
                                     Live Demo
                                 </Button>
                                 <Button
                                     variant="outlined"
-                                    size="small"
+                                    size="large"
                                     startIcon={<GitHub />}
                                     href={project.frontendUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    sx={{ width: { xs: '100%', sm: 'auto' } }}
                                 >
                                     Frontend
                                 </Button>
                                 {project.backendUrl && (
                                     <Button
                                         variant="outlined"
-                                        size="small"
+                                        size="large"
                                         startIcon={<GitHub />}
                                         href={project.backendUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        sx={{ width: { xs: '100%', sm: 'auto' } }}
                                     >
                                         Backend
                                     </Button>

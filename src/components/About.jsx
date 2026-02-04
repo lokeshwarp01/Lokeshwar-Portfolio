@@ -5,17 +5,17 @@ import { Code, Speed, Group } from '@mui/icons-material';
 const About = () => {
     const highlights = [
         {
-            icon: <Code fontSize="large" />,
+            icon: <Code sx={{ fontSize: '3rem' }} />,
             title: 'Clean Code',
             description: 'Writing maintainable and efficient code following best practices',
         },
         {
-            icon: <Speed fontSize="large" />,
+            icon: <Speed sx={{ fontSize: '3rem' }} />,
             title: 'Fast Learner',
             description: 'Quick to adapt to new technologies and frameworks',
         },
         {
-            icon: <Group fontSize="large" />,
+            icon: <Group sx={{ fontSize: '3rem' }} />,
             title: 'Team Player',
             description: 'Collaborative approach in agile development environments',
         },
@@ -25,96 +25,88 @@ const About = () => {
         <Box
             id="about"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: '#000000',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
+                        textAlign: 'left',
+                        mb: 4,
+                        color: '#000',
                     }}
                 >
-                    About Me
+                    About // Me
                 </Typography>
 
                 <Box
                     sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
-                        mb: 6,
-                    }}
-                />
-
-                <Typography
-                    variant="body1"
-                    sx={{
-                        textAlign: 'center',
-                        maxWidth: '800px',
-                        mx: 'auto',
-                        mb: 6,
-                        color: '#b0b0b0',
-                        fontSize: '1.1rem',
-                        lineHeight: 1.8,
+                        display: 'flex',
+                        flexDirection: { xs: 'column', md: 'row' },
+                        gap: 8,
+                        mb: 10
                     }}
                 >
-                    Aspiring <strong style={{ color: '#ffffff' }}>Software Engineer</strong> skilled in building web applications with the{' '}
-                    <strong style={{ color: '#ffffff' }}>MERN (MongoDB, Express.js, React.js, Node.js)</strong> stack.
-                    Strong grasp of <strong style={{ color: '#ffffff' }}>Data Structures, Algorithms, and OOP</strong>.
-                    Experienced in creating responsive UIs, integrating RESTful APIs, and using Git for version control.
-                    Focused on writing clean, efficient code and collaborating in agile teams.
-                </Typography>
+                    <Box sx={{ flex: 1 }}>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: '#000',
+                                fontSize: '1.25rem',
+                                lineHeight: 1.6,
+                                mb: 3,
+                            }}
+                        >
+                            I'm a <strong style={{ textDecoration: 'underline', textDecorationThickness: '4px' }}>Software Engineer</strong> who doesn't settle for "good enough."
+                            I specialize in the <strong style={{ backgroundColor: '#000', color: '#fff', padding: '0 4px' }}>MERN Stack</strong>.
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: '#333', fontSize: '1.1rem' }}>
+                            Strong foundations in Data Structures, Algorithms, and OOP.
+                            I build interfaces that are fast, accessible, and impossible to ignore.
+                            If it's interactive, I've likely tried to break it to make it better.
+                        </Typography>
+                    </Box>
+                    <Box sx={{ flex: 1, backgroundColor: '#000', color: '#fff', p: 4, border: '4px solid #000', boxShadow: '12px 12px 0px #000' }}>
+                        <Typography variant="h5" sx={{ mb: 2, fontWeight: 900, textTransform: 'uppercase' }}>Current Mission:</Typography>
+                        <Typography variant="body1" sx={{ fontStyle: 'italic', fontSize: '1.2rem' }}>
+                            "To engineer software that solves complex problems with elegant, efficient, and robust architecture."
+                        </Typography>
+                    </Box>
+                </Box>
 
                 <Box
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-                        gap: 3,
+                        gap: 4,
                     }}
                 >
                     {highlights.map((item, index) => (
                         <Paper
                             key={index}
-                            elevation={0}
+                            className="brutalist-card"
                             sx={{
-                                p: { xs: 3, md: 4 },
-                                textAlign: 'center',
-                                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                                border: '1px solid #333333',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    transform: 'translateY(-8px)',
-                                    borderColor: '#ffffff',
-                                    boxShadow: '0 12px 40px rgba(255, 255, 255, 0.1)',
-                                },
+                                p: 4,
+                                height: '100%'
                             }}
                         >
                             <Box
                                 sx={{
                                     display: 'inline-flex',
-                                    p: 2,
-                                    borderRadius: '50%',
-                                    background: 'rgba(255, 255, 255, 0.05)',
-                                    border: '2px solid #333333',
-                                    mb: 2,
-                                    transition: 'all 0.3s ease',
-                                    '&:hover': {
-                                        borderColor: '#ffffff',
-                                    },
+                                    mb: 3,
+                                    color: '#000'
                                 }}
                             >
                                 {item.icon}
                             </Box>
-                            <Typography variant="h6" sx={{ mb: 1, fontWeight: 600 }}>
+                            <Typography variant="h5" sx={{ mb: 2, fontWeight: 900 }}>
                                 {item.title}
                             </Typography>
-                            <Typography variant="body2" sx={{ color: '#b0b0b0' }}>
+                            <Typography variant="body2" sx={{ color: '#000' }}>
                                 {item.description}
                             </Typography>
                         </Paper>

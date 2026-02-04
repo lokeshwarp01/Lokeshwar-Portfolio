@@ -21,112 +21,99 @@ const Experience = () => {
         <Box
             id="experience"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: '#000000',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
+                        textAlign: 'left',
+                        mb: 6,
+                        color: '#000',
                     }}
                 >
-                    Experience
+                    Experience // Lab
                 </Typography>
 
-                <Box
-                    sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
-                        mb: 6,
-                    }}
-                />
-
                 <Paper
-                    elevation={0}
+                    className="brutalist-card"
                     sx={{
-                        p: { xs: 2.5, sm: 3, md: 4 },
-                        background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                        border: '1px solid #333333',
+                        p: { xs: 3, sm: 4, md: 6 },
                         position: 'relative',
-                        transition: 'all 0.3s ease',
-                        '&:hover': {
-                            borderColor: '#ffffff',
-                            boxShadow: '0 12px 40px rgba(255, 255, 255, 0.1)',
-                        },
-                        '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            left: 0,
-                            top: 0,
-                            bottom: 0,
-                            width: '4px',
-                            background: 'linear-gradient(180deg, #ffffff 0%, #808080 100%)',
-                        },
+                        backgroundColor: '#ffffff',
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', sm: 'center' }, mb: 2, flexWrap: 'wrap', gap: 1, flexDirection: { xs: 'column', sm: 'row' } }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', sm: 'center' }, mb: 4, flexWrap: 'wrap', gap: 2, flexDirection: { xs: 'column', sm: 'row' } }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', backgroundColor: '#000', color: '#fff', px: 2, py: 1 }}>
                             <Work sx={{ mr: 1 }} />
-                            <Typography variant="h5" sx={{ fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
+                            <Typography variant="h4" sx={{ fontWeight: 900, fontSize: { xs: '1.5rem', sm: '2rem' }, textTransform: 'uppercase' }}>
                                 {experience.title}
                             </Typography>
                         </Box>
                         <Chip
-                            label="Current"
-                            size="small"
+                            label="PRESENT"
                             sx={{
-                                ml: { xs: 0, sm: 2 },
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                color: '#ffffff',
-                                fontWeight: 600,
+                                borderRadius: 0,
+                                border: '3px solid #000',
+                                backgroundColor: '#fff',
+                                color: '#000',
+                                fontWeight: 900,
+                                animation: 'shake 1.5s infinite'
                             }}
                         />
                     </Box>
 
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         sx={{
-                            color: '#e0e0e0',
-                            mb: 2,
-                            fontWeight: 500,
+                            color: '#000',
+                            mb: 3,
+                            fontWeight: 800,
+                            textDecoration: 'underline overline',
+                            textDecorationThickness: '3px',
+                            textTransform: 'uppercase'
                         }}
                     >
                         {experience.company}
                     </Typography>
 
-                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', gap: { xs: 1, sm: 2 }, mb: 3 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                            <CalendarToday sx={{ fontSize: '1rem', mr: 0.5 }} />
-                            <Typography variant="body2" sx={{ fontSize: { xs: '0.875rem', sm: '0.875rem' } }}>{experience.period}</Typography>
+                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', gap: { xs: 2, sm: 4 }, mb: 4 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', color: '#000', fontWeight: 700 }}>
+                            <CalendarToday sx={{ fontSize: '1.2rem', mr: 1 }} />
+                            <Typography variant="body1">{experience.period}</Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                            <LocationOn sx={{ fontSize: '1rem', mr: 0.5 }} />
-                            <Typography variant="body2" sx={{ fontSize: { xs: '0.875rem', sm: '0.875rem' } }}>{experience.location}</Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', color: '#000', fontWeight: 700 }}>
+                            <LocationOn sx={{ fontSize: '1.2rem', mr: 1 }} />
+                            <Typography variant="body1">{experience.location}</Typography>
                         </Box>
                     </Box>
 
-                    <Box component="ul" sx={{ pl: 2, m: 0 }}>
+                    <Box component="ul" sx={{ pl: 0, m: 0, listStyle: 'none' }}>
                         {experience.achievements.map((achievement, index) => (
                             <Box
                                 component="li"
                                 key={index}
                                 sx={{
-                                    color: '#b0b0b0',
-                                    mb: 1.5,
-                                    lineHeight: 1.7,
-                                    '&::marker': {
-                                        color: '#ffffff',
-                                    },
+                                    color: '#000',
+                                    mb: 2,
+                                    lineHeight: 1.4,
+                                    fontSize: '1.1rem',
+                                    fontWeight: 500,
+                                    display: 'flex',
+                                    '&::before': {
+                                        content: '"// "',
+                                        marginRight: '15px',
+                                        fontWeight: 900,
+                                        color: '#000',
+                                        flexShrink: 0
+                                    }
                                 }}
                             >
-                                <Typography variant="body1">{achievement}</Typography>
+                                {achievement}
                             </Box>
                         ))}
                     </Box>

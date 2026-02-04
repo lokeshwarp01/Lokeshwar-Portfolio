@@ -29,66 +29,61 @@ const Skills = () => {
         },
     ];
 
+    const allSkills = skillCategories.flatMap(c => c.skills).join(' • ');
+
     return (
         <Box
             id="skills"
             sx={{
-                py: { xs: 6, md: 10 },
-                background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
+                py: { xs: 8, md: 12 },
+                background: '#ffffff',
+                borderTop: '6px solid #000',
+                overflow: 'hidden'
             }}
         >
+            <Box className="marquee-container" sx={{ mb: 8 }}>
+                <Box className="marquee-content">
+                    {allSkills} • {allSkills} • {allSkills}
+                </Box>
+            </Box>
+
             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
+                    className="glitch-text"
                     sx={{
-                        textAlign: 'center',
-                        mb: 2,
-                        fontWeight: 700,
-                        fontSize: { xs: '2rem', md: '3rem' },
+                        textAlign: 'left',
+                        mb: 6,
+                        color: '#000',
                     }}
                 >
-                    Technical Skills
+                    Stack // Skills
                 </Typography>
-
-                <Box
-                    sx={{
-                        width: '60px',
-                        height: '4px',
-                        background: 'linear-gradient(90deg, #ffffff 0%, #808080 100%)',
-                        mx: 'auto',
-                        mb: 6,
-                    }}
-                />
 
                 <Box
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
-                        gap: 3,
+                        gap: 4,
                     }}
                 >
                     {skillCategories.map((category, index) => (
                         <Paper
                             key={index}
-                            elevation={0}
+                            className="brutalist-card"
                             sx={{
-                                p: { xs: 2.5, md: 3 },
-                                background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
-                                border: '1px solid #333333',
-                                transition: 'all 0.3s ease',
-                                '&:hover': {
-                                    borderColor: '#ffffff',
-                                    boxShadow: '0 8px 24px rgba(255, 255, 255, 0.08)',
-                                },
+                                p: 4,
                             }}
                         >
                             <Typography
-                                variant="h6"
+                                variant="h5"
                                 sx={{
-                                    mb: 2,
-                                    fontWeight: 600,
-                                    borderBottom: '2px solid #333333',
+                                    mb: 3,
+                                    fontWeight: 900,
+                                    textTransform: 'uppercase',
+                                    borderBottom: '4px solid #000',
                                     pb: 1,
+                                    display: 'inline-block'
                                 }}
                             >
                                 {category.category}
@@ -97,7 +92,7 @@ const Skills = () => {
                                 sx={{
                                     display: 'flex',
                                     flexWrap: 'wrap',
-                                    gap: 1,
+                                    gap: 1.5,
                                 }}
                             >
                                 {category.skills.map((skill, skillIndex) => (
@@ -105,10 +100,15 @@ const Skills = () => {
                                         key={skillIndex}
                                         label={skill}
                                         sx={{
-                                            backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                                            color: '#ffffff',
-                                            fontWeight: 500,
-                                            fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                                            border: '2px solid #000',
+                                            borderRadius: 0,
+                                            fontWeight: 800,
+                                            fontSize: { xs: '0.8rem', sm: '1rem' },
+                                            backgroundColor: '#ffffff',
+                                            '&:hover': {
+                                                backgroundColor: '#000',
+                                                color: '#fff'
+                                            }
                                         }}
                                     />
                                 ))}
