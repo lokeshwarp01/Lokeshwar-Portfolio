@@ -24,11 +24,11 @@ const Education = () => {
         <Box
             id="education"
             sx={{
-                py: 10,
+                py: { xs: 6, md: 10 },
                 background: '#000000',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
                     sx={{
@@ -63,7 +63,7 @@ const Education = () => {
                             key={index}
                             elevation={0}
                             sx={{
-                                p: 4,
+                                p: { xs: 2.5, sm: 3, md: 4 },
                                 background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
                                 border: '1px solid #333333',
                                 position: 'relative',
@@ -84,8 +84,8 @@ const Education = () => {
                             }}
                         >
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <School sx={{ mr: 1 }} />
-                                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                                <School sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
+                                <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                                     {edu.degree}
                                 </Typography>
                             </Box>

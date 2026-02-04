@@ -7,11 +7,11 @@ const Contact = () => {
         <Box
             id="contact"
             sx={{
-                py: 10,
+                py: { xs: 6, md: 10 },
                 background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 100%)',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
                     sx={{
@@ -51,7 +51,7 @@ const Contact = () => {
 
                 <Stack
                     direction="row"
-                    spacing={2}
+                    spacing={{ xs: 1.5, sm: 2 }}
                     justifyContent="center"
                     sx={{ mb: 4 }}
                 >
@@ -63,8 +63,8 @@ const Contact = () => {
                         sx={{
                             color: '#ffffff',
                             border: '2px solid #333333',
-                            width: 56,
-                            height: 56,
+                            width: { xs: 48, sm: 56 },
+                            height: { xs: 48, sm: 56 },
                             transition: 'all 0.3s ease',
                             '&:hover': {
                                 borderColor: '#ffffff',
@@ -73,7 +73,7 @@ const Contact = () => {
                             },
                         }}
                     >
-                        <GitHub fontSize="large" />
+                        <GitHub sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
                     </IconButton>
                     <IconButton
                         component="a"
@@ -83,8 +83,8 @@ const Contact = () => {
                         sx={{
                             color: '#ffffff',
                             border: '2px solid #333333',
-                            width: 56,
-                            height: 56,
+                            width: { xs: 48, sm: 56 },
+                            height: { xs: 48, sm: 56 },
                             transition: 'all 0.3s ease',
                             '&:hover': {
                                 borderColor: '#ffffff',
@@ -93,7 +93,7 @@ const Contact = () => {
                             },
                         }}
                     >
-                        <LinkedIn fontSize="large" />
+                        <LinkedIn sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
                     </IconButton>
                     <IconButton
                         component="a"
@@ -101,8 +101,8 @@ const Contact = () => {
                         sx={{
                             color: '#ffffff',
                             border: '2px solid #333333',
-                            width: 56,
-                            height: 56,
+                            width: { xs: 48, sm: 56 },
+                            height: { xs: 48, sm: 56 },
                             transition: 'all 0.3s ease',
                             '&:hover': {
                                 borderColor: '#ffffff',
@@ -111,7 +111,7 @@ const Contact = () => {
                             },
                         }}
                     >
-                        <Email fontSize="large" />
+                        <Email sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }} />
                     </IconButton>
                 </Stack>
 
@@ -125,16 +125,16 @@ const Contact = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <Email sx={{ mr: 1 }} />
-                        <Typography variant="body1">panugantilokeshwar@gmail.com</Typography>
+                        <Email sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
+                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' }, wordBreak: 'break-word' }}>panugantilokeshwar@gmail.com</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <Phone sx={{ mr: 1 }} />
-                        <Typography variant="body1">+91 9177621222</Typography>
+                        <Phone sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
+                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>+91 9177621222</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
-                        <LocationOn sx={{ mr: 1 }} />
-                        <Typography variant="body1">Hyderabad, Telangana, India</Typography>
+                        <LocationOn sx={{ mr: 1, fontSize: { xs: '1.25rem', sm: '1.5rem' } }} />
+                        <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>Hyderabad, Telangana, India</Typography>
                     </Box>
                 </Box>
 

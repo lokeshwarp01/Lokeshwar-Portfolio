@@ -21,11 +21,11 @@ const Experience = () => {
         <Box
             id="experience"
             sx={{
-                py: 10,
+                py: { xs: 6, md: 10 },
                 background: '#000000',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
                     sx={{
@@ -51,7 +51,7 @@ const Experience = () => {
                 <Paper
                     elevation={0}
                     sx={{
-                        p: 4,
+                        p: { xs: 2.5, sm: 3, md: 4 },
                         background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
                         border: '1px solid #333333',
                         position: 'relative',
@@ -71,16 +71,18 @@ const Experience = () => {
                         },
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, flexWrap: 'wrap', gap: 1 }}>
-                        <Work sx={{ mr: 1 }} />
-                        <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                            {experience.title}
-                        </Typography>
+                    <Box sx={{ display: 'flex', alignItems: { xs: 'flex-start', sm: 'center' }, mb: 2, flexWrap: 'wrap', gap: 1, flexDirection: { xs: 'column', sm: 'row' } }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Work sx={{ mr: 1 }} />
+                            <Typography variant="h5" sx={{ fontWeight: 600, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
+                                {experience.title}
+                            </Typography>
+                        </Box>
                         <Chip
                             label="Current"
                             size="small"
                             sx={{
-                                ml: 2,
+                                ml: { xs: 0, sm: 2 },
                                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                                 color: '#ffffff',
                                 fontWeight: 600,
@@ -99,14 +101,14 @@ const Experience = () => {
                         {experience.company}
                     </Typography>
 
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mb: 3 }}>
+                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', gap: { xs: 1, sm: 2 }, mb: 3 }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
                             <CalendarToday sx={{ fontSize: '1rem', mr: 0.5 }} />
-                            <Typography variant="body2">{experience.period}</Typography>
+                            <Typography variant="body2" sx={{ fontSize: { xs: '0.875rem', sm: '0.875rem' } }}>{experience.period}</Typography>
                         </Box>
                         <Box sx={{ display: 'flex', alignItems: 'center', color: '#b0b0b0' }}>
                             <LocationOn sx={{ fontSize: '1rem', mr: 0.5 }} />
-                            <Typography variant="body2">{experience.location}</Typography>
+                            <Typography variant="body2" sx={{ fontSize: { xs: '0.875rem', sm: '0.875rem' } }}>{experience.location}</Typography>
                         </Box>
                     </Box>
 

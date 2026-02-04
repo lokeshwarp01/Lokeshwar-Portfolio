@@ -34,7 +34,7 @@ const Hero = () => {
                 },
             }}
         >
-            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, px: { xs: 2, sm: 3, md: 4 } }}>
                 <Box
                     sx={{
                         textAlign: 'center',
@@ -97,11 +97,11 @@ const Hero = () => {
                     </Typography>
 
                     <Stack
-                        direction="row"
+                        direction={{ xs: 'column', sm: 'row' }}
                         spacing={2}
                         justifyContent="center"
-                        flexWrap="wrap"
-                        sx={{ mb: 4 }}
+                        alignItems="center"
+                        sx={{ mb: 4, width: '100%', px: { xs: 2, sm: 0 } }}
                     >
                         <Button
                             variant="contained"
@@ -110,7 +110,9 @@ const Hero = () => {
                             sx={{
                                 px: 4,
                                 py: 1.5,
-                                fontSize: '1rem',
+                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                                width: { xs: '100%', sm: 'auto' },
+                                maxWidth: { xs: '320px', sm: 'none' },
                             }}
                         >
                             View My Work
@@ -121,11 +123,13 @@ const Hero = () => {
                             startIcon={<Download />}
                             component="a"
                             href="/LokeshwarP@16.pdf"
-                            download="LokeshwarP@16.pdf"
+                            download="Lokeshwar_Panuganti.pdf"
                             sx={{
                                 px: 4,
                                 py: 1.5,
-                                fontSize: '1rem',
+                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                                width: { xs: '100%', sm: 'auto' },
+                                maxWidth: { xs: '320px', sm: 'none' },
                             }}
                         >
                             Download Resume
@@ -137,7 +141,9 @@ const Hero = () => {
                             sx={{
                                 px: 4,
                                 py: 1.5,
-                                fontSize: '1rem',
+                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                                width: { xs: '100%', sm: 'auto' },
+                                maxWidth: { xs: '320px', sm: 'none' },
                             }}
                         >
                             Contact Me

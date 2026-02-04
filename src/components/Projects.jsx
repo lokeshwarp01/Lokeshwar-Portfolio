@@ -38,11 +38,11 @@ const Projects = () => {
         <Box
             id="projects"
             sx={{
-                py: 10,
+                py: { xs: 6, md: 10 },
                 background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
                     sx={{
@@ -84,7 +84,7 @@ const Projects = () => {
                                 border: '1px solid #333333',
                             }}
                         >
-                            <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                            <CardContent sx={{ flexGrow: 1, p: { xs: 2.5, sm: 3 } }}>
                                 <Typography
                                     variant="h5"
                                     sx={{
@@ -153,7 +153,7 @@ const Projects = () => {
                                 </Stack>
                             </CardContent>
 
-                            <CardActions sx={{ p: 3, pt: 0 }}>
+                            <CardActions sx={{ p: { xs: 2.5, sm: 3 }, pt: 0, flexDirection: { xs: 'column', sm: 'row' }, gap: 1, alignItems: 'stretch' }}>
                                 <Button
                                     variant="outlined"
                                     size="small"
@@ -161,7 +161,7 @@ const Projects = () => {
                                     href={project.liveUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    sx={{ mr: 1 }}
+                                    sx={{ width: { xs: '100%', sm: 'auto' } }}
                                 >
                                     Live Demo
                                 </Button>
@@ -172,6 +172,7 @@ const Projects = () => {
                                     href={project.frontendUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    sx={{ width: { xs: '100%', sm: 'auto' } }}
                                 >
                                     Frontend
                                 </Button>
@@ -183,6 +184,7 @@ const Projects = () => {
                                         href={project.backendUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        sx={{ width: { xs: '100%', sm: 'auto' } }}
                                     >
                                         Backend
                                     </Button>

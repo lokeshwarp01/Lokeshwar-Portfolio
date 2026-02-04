@@ -33,11 +33,11 @@ const Skills = () => {
         <Box
             id="skills"
             sx={{
-                py: 10,
+                py: { xs: 6, md: 10 },
                 background: 'linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%)',
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography
                     variant="h2"
                     sx={{
@@ -72,7 +72,7 @@ const Skills = () => {
                             key={index}
                             elevation={0}
                             sx={{
-                                p: 3,
+                                p: { xs: 2.5, md: 3 },
                                 background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
                                 border: '1px solid #333333',
                                 transition: 'all 0.3s ease',
@@ -108,7 +108,7 @@ const Skills = () => {
                                             backgroundColor: 'rgba(255, 255, 255, 0.05)',
                                             color: '#ffffff',
                                             fontWeight: 500,
-                                            fontSize: '0.875rem',
+                                            fontSize: { xs: '0.75rem', sm: '0.875rem' },
                                         }}
                                     />
                                 ))}
