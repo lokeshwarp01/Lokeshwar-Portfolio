@@ -153,7 +153,19 @@ const Projects = () => {
                                 </Stack>
                             </CardContent>
 
-                            <CardActions sx={{ p: { xs: 2.5, sm: 3 }, pt: 0, flexDirection: { xs: 'column', sm: 'row' }, gap: 1, alignItems: 'stretch' }}>
+                            <CardActions
+                                disableSpacing
+                                sx={{
+                                    p: { xs: 2.5, sm: 3 },
+                                    pt: 0,
+                                    flexDirection: { xs: 'column', sm: 'row' },
+                                    gap: 1.5,
+                                    alignItems: 'stretch',
+                                    '& > *': {
+                                        margin: '0 !important',
+                                    }
+                                }}
+                            >
                                 <Button
                                     variant="outlined"
                                     size="small"
