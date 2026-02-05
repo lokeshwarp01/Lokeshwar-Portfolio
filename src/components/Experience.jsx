@@ -7,7 +7,7 @@ const Experience = () => {
         title: 'Student Intern',
         company: 'TechU Innovation Labs',
         location: 'Madhapur, Hyderabad, Telangana',
-        period: 'June 2025 – Present',
+        period: 'June 2025 – Dec 2025',
         achievements: [
             'Developed and deployed the frontend for Wok AI, a healthcare web application enabling online doctor consultations',
             'Built responsive layouts using React.js and Tailwind CSS, improving cross-device performance by 25%',
@@ -55,14 +55,13 @@ const Experience = () => {
                             </Typography>
                         </Box>
                         <Chip
-                            label="PRESENT"
+                            label="COMPLETED"
                             sx={{
                                 borderRadius: 0,
                                 border: '3px solid #000',
                                 backgroundColor: '#fff',
                                 color: '#000',
                                 fontWeight: 900,
-                                animation: 'shake 1.5s infinite'
                             }}
                         />
                     </Box>

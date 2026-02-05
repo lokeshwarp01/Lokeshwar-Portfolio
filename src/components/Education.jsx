@@ -16,7 +16,7 @@ const Education = () => {
             institution: 'JKC College, Guntur',
             university: 'Acharya Nagarjuna University',
             period: '2020 – 2023',
-            cgpa: '7.91 / 10',
+            cgpa: '7.94 / 10',
         },
     ];
 

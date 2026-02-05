@@ -62,7 +62,6 @@ const SubProjects = () => {
             id="other-projects"
             sx={{
                 py: { xs: 8, md: 10 },
-                background: '#f5f5f5',
                 borderTop: '4px solid #000',
             }}
         >
@@ -101,7 +100,6 @@ const SubProjects = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 borderRadius: 0,
-                                backgroundColor: '#fff',
                                 transition: 'transform 0.2s',
                                 '&:hover': {
                                     transform: 'translate(-4px, -4px)',
@@ -142,7 +140,6 @@ const SubProjects = () => {
                                             size="small"
                                             sx={{
                                                 border: '1px solid #000',
-                                                backgroundColor: '#eee',
                                                 fontWeight: 700,
                                                 borderRadius: 0,
                                                 fontSize: '0.7rem'
