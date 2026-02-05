@@ -134,7 +134,7 @@ const Hero = () => {
                             size="large"
                             startIcon={<Download />}
                             component="a"
-                            href="/LokeshwarP@16.pdf"
+                            href="/LokeshwarP@17.pdf"
                             download="Lokeshwar_Panuganti.pdf"
                             sx={{
                                 px: 5,
