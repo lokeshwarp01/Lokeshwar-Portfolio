@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { AppBar, Box, Button, Toolbar } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Button,
+  Drawer,
+  IconButton,
+  Stack,
+  Toolbar,
+} from '@mui/material';
+import { Close, Menu } from '@mui/icons-material';
 
 const navItems = [
   { id: 'about', label: 'About' },
@@ -12,6 +21,13 @@ const navItems = [
 
 const Navbar = ({ visible }) => {
   const [activeTab, setActiveTab] = useState('about');
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (!visible && mobileOpen) {
+      setMobileOpen(false);
+    }
+  }, [visible, mobileOpen]);
 
   useEffect(() => {
     const sections = navItems
@@ -51,6 +67,11 @@ const Navbar = ({ visible }) => {
     }
   };
 
+  const handleMobileNavigate = (id) => {
+    scrollToSection(id);
+    setMobileOpen(false);
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -70,9 +91,9 @@ const Navbar = ({ visible }) => {
       <Toolbar
         sx={{
           justifyContent: 'space-between',
-          gap: 2,
+          gap: 1.5,
           minHeight: { xs: 64, sm: 72 },
-          px: { xs: 2, sm: 3, md: 4 },
+          px: { xs: 1.5, sm: 2.5, md: 3, lg: 4 },
         }}
       >
         <Button
@@ -80,8 +101,10 @@ const Navbar = ({ visible }) => {
           variant="contained"
           sx={{
             whiteSpace: 'nowrap',
-            px: { xs: 2, sm: 2.5 },
-            py: { xs: 0.9, sm: 1 },
+            px: { xs: 1.6, sm: 2.2 },
+            py: { xs: 0.75, sm: 0.95 },
+            fontSize: { xs: '0.75rem', sm: '0.85rem' },
+            flexShrink: 0,
           }}
         >
           LOKESHWAR
@@ -89,8 +112,10 @@ const Navbar = ({ visible }) => {
 
         <Box
           sx={{
-            display: 'flex',
+            display: { xs: 'none', lg: 'flex' },
             alignItems: 'center',
+            justifyContent: 'flex-end',
+            flex: 1,
             gap: 1,
             overflowX: 'auto',
             py: 0.5,
@@ -103,20 +128,86 @@ const Navbar = ({ visible }) => {
             <Button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              variant={activeTab === item.id ? "contained" : "outlined"}
+              variant={activeTab === item.id ? 'contained' : 'outlined'}
               sx={{
                 flexShrink: 0,
                 minWidth: 'fit-content',
                 whiteSpace: 'nowrap',
-                px: { xs: 2, sm: 2.25 },
-                py: { xs: 0.9, sm: 1 },
+                px: 2,
+                py: 0.95,
+                fontSize: '0.78rem',
               }}
             >
               {item.label}
             </Button>
           ))}
         </Box>
+
+        <IconButton
+          aria-label="open navigation menu"
+          onClick={() => setMobileOpen(true)}
+          sx={{
+            display: { xs: 'inline-flex', lg: 'none' },
+            p: 0.95,
+            ml: 'auto',
+          }}
+        >
+          <Menu />
+        </IconButton>
       </Toolbar>
+
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{
+          sx: {
+            width: { xs: '86vw', sm: 340 },
+            p: 2,
+            backgroundColor: '#ffffff',
+            borderLeft: '4px solid #000000',
+          },
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            mb: 2,
+          }}
+        >
+          <IconButton
+            aria-label="close navigation menu"
+            onClick={() => setMobileOpen(false)}
+          >
+            <Close />
+          </IconButton>
+        </Box>
+
+        <Stack spacing={1.5}>
+          <Button
+            fullWidth
+            variant="outlined"
+            onClick={() => handleMobileNavigate('home')}
+            sx={{ justifyContent: 'flex-start' }}
+          >
+            Home
+          </Button>
+
+          {navItems.map((item) => (
+            <Button
+              key={`mobile-${item.id}`}
+              fullWidth
+              onClick={() => handleMobileNavigate(item.id)}
+              variant={activeTab === item.id ? 'contained' : 'outlined'}
+              sx={{ justifyContent: 'flex-start' }}
+            >
+              {item.label}
+            </Button>
+          ))}
+        </Stack>
+      </Drawer>
     </AppBar>
   );
 };
