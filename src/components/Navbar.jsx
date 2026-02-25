@@ -38,19 +38,34 @@ const Navbar = ({ visible }) => {
       return undefined;
     }
 
+    const sectionRatios = new Map(sections.map((section) => [section.id, 0]));
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        entries.forEach((entry) => {
+          sectionRatios.set(
+            entry.target.id,
+            entry.isIntersecting ? entry.intersectionRatio : 0
+          );
+        });
 
-        if (visibleEntries[0]?.target?.id) {
-          setActiveTab(visibleEntries[0].target.id);
+        let nextActive = '';
+        let maxRatio = 0;
+
+        sectionRatios.forEach((ratio, id) => {
+          if (ratio > maxRatio) {
+            maxRatio = ratio;
+            nextActive = id;
+          }
+        });
+
+        if (nextActive) {
+          setActiveTab(nextActive);
         }
       },
       {
-        threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: '-18% 0px -55% 0px',
+        threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.7],
+        rootMargin: '-12% 0px -52% 0px',
       }
     );
 
